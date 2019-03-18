@@ -1,20 +1,21 @@
-sudo:       required
-language:   generic
-services:   docker
-
+sudo: required
+language: generic
+services: docker
 tex-config:
-  - tex-scheme=small
-  - push-type=none
-  - build-pattern=./CookingRecipes.tex
-  - packages=cuisine, units, geometry
-
+- tex-scheme=small
+- push-type=none
+- build-pattern=./CookingRecipes.tex
+- packages=cuisine, units, geometry
 env:
   global:
-    ## When you have done the travis encrypting, then it should look
-    ## something like this
-    # secure: ENCRYPTED-GITHUBTOKEN
-    - IS_TRAVIS=true
-
+  - IS_TRAVIS=true
 script:
-  - chmod +x .travis/travis-texbuild.sh
-  - .travis/travis-texbuild.sh
+- chmod +x .travis/travis-texbuild.sh
+- ".travis/travis-texbuild.sh"
+deploy:
+  provider: releases
+  api_key:
+    secure: tFDUC6pHopCIL3SqSONiB+XUH1wIgiVhrDaVYRIuyAla9Xp+NHXMb8vkI4DKGKBYD75BjUK3Ousj9AYt2Ggf69LhhntWD/9Xa08EkToViCRnx3+N4HNwKELXMaILl9adviM4MuD/XV+11Ewe9C8+gljQn/trhJapk2r195WmfwzDfhVmTXMlbTxcmSEjYp0LdK1+kqHjfdcc2LMY2Pzk77Feyp4KUUbJogS06RV/HIjrHBL754u1O6dgt0l029Rg4k3uS4pm5soBMBhR2HaemeqHuFbKikAi2S/TQnJh8tArSYHCRQ/+2YrHFupWi4eCOrzqnyrSR/5jsMMNtyN5TYO0sQmIAI8T/9JGRgB02cQR81/GUq0Yni83hMm5MaVyUGQFV7uvuaHOepJ1Wpjf4z8eThWqNsKHmZ7VZ7VVW9ep7y81UkkQG+G2MkSGkRrj8TP+92bji6ibnIiyVupJaKec0o2IYTSmFtdkdyrC5Nobv3MeZjMCicS26g6LgVN/1rIZ7HkTIfIX3eE6h2nGQBhTlGvzLk+kzFC+uJ9b9W2o9Pw4doHk+vlzjJfxOJ6bGg8QCtqb/5DD+Bsrm4jLTqThn+oEWGmoe4r1+cWopYyZcGcg3HFzEosoG0rFz0cBy/Yt04BmLsFsqDJgqYWoUmynmpBqtV9EebPMGTJTMAc=
+  file: "./CookingRecipes.pdf"
+  on:
+    repo: kenkaijie/CookingRecipes
