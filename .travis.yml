@@ -7,7 +7,8 @@ tex-config:
 - build-pattern=./CookingRecipes.tex
 - packages=cuisine, units, geometry
 before_install:
-  - "openssl aes-256-cbc -K $encrypted_93b59d7ddf55_key -iv $encrypted_93b59d7ddf55_iv -in github_deploy_key.enc -out github_deploy_key -d"
+- openssl aes-256-cbc -K $encrypted_93b59d7ddf55_key -iv $encrypted_93b59d7ddf55_iv
+  -in github_deploy_key.enc -out github_deploy_key -d
 env:
   global:
   - IS_TRAVIS=true
