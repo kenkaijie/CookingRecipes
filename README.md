@@ -1,2 +1,2 @@
 # CookingRecipes
-Just a Collection of Cooking Receipes
+Just a Collection of Cooking Recipes
