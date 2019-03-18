@@ -6,7 +6,7 @@ tex-config:
   - tex-scheme=small
   - push-type=none
   - build-pattern=./CookingRecipes.tex
-  - packages=cuisine, geometry
+  - packages=cuisine, units, geometry
 
 env:
   global:
