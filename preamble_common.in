@@ -1,0 +1,8 @@
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+
+\usepackage[contents, index]{cuisine}
+\usepackage{standalone}
+
+% the build system will replace this version with the correct one
+\newcommand{\docversion}{VERSIONTAG}

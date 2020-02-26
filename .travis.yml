@@ -1,19 +1,9 @@
 sudo: required
 language: generic
 services: docker
-tex-config:
-- tex-scheme=small
-- push-type=none
-- build-pattern=./CookingRecipes.tex
-- packages=cuisine, units, geometry
-before_install:
-- "openssl aes-256-cbc -K $encrypted_3b1dde209c96_key -iv $encrypted_3b1dde209c96_iv -in github_deploy_key.enc -out github_deploy_key -d"
-env:
-  global:
-  - IS_TRAVIS=true
 script:
-- chmod +x .travis/travis-texbuild.sh
-- ".travis/travis-texbuild.sh"
+- sed -i 's/VERSIONTAG/$TRAVIS_TAG/g' preamble_common.in
+- docker run --mount src=$TRAVIS_BUILD_DIR,target=/usr/src,type=bind kennethkaijieng/latex-tectonic:latest /bin/sh -c "tectonic CookingRecipes.tex"
 deploy:
   provider: releases
   api_key:
