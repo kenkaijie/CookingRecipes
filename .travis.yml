@@ -11,7 +11,7 @@ deploy:
   api_key:
     secure: S4IqJq65N4DngMRHDUAqBrC8FquLMXuPgkpJSY+J5DVyDRcU34MofECpwOzAXEaKaMdfyrMqINY4ifMt55osPdoQbK5qtbo/cvR1P02Xh3Z+ha/0A80EncLxxgsAW/ARpScovoypV490R4XAxNuMmgET8KNdu6ew76L2r83bGVY6XfMV7KSFSrCNuH/knnnYkjL6OdLRed+kuwDR0eV0nCS1WonoPQvwQIWc5rcPahA29QH1DzDJmruE+VMoWgnCB48qmsVBw+9KTDrFfDnGt9bfVZUyBzRjjg94o1LaJhCzCfwbSpSi3HDByyrGMIFFsMU6qM4hD3siAgVRnXnwv3uQcFofmm9VA+p2TKaHzZfDvKEAvhw5dyRdip207B6Z29CTfwgp2H2CohB7LzFWTnu7g+vrxAH8EIbAYv9Q3+LV6UZoRGIT+cQ4JaRaFrKKXa017k1UfsiSTjVZJkIIwWYAMSp2+WiqnqIIPw+5eo0roq8LYpBhyyP/o4ejE6FKesQ7HgeBalMp5D0CbJlLPOJHYxRhbTapt4ChnDDm0U1Rwm4sD8qqK6pm2wVJD8HXfHThIj9x5p6GqAlCUKTahgafwPX/1vedJ6uKfEU0vUV+qWZ2dBLK2Tm3TSyS/9ozU/Os+sFdqZsifMZwubxGJ8qae24mJRD1kPI84R7lQ3Q=
   file:
-  - "CookingRecipes.pdf"
+  - "$TRAVIS_BUILD_DIR/CookingRecipes.pdf"
   skip_cleanup: true
   on:
     tags: true
