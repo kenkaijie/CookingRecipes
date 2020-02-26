@@ -2,7 +2,8 @@ sudo: required
 language: generic
 services: docker
 script:
-- sed -i 's/VERSIONTAG/$TRAVIS_TAG/g' preamble_common.in
+- echo $TRAVIS_TAG
+- sed -i "s/VERSIONTAG/$TRAVIS_TAG/g" preamble_common.in
 - docker run --mount src=$TRAVIS_BUILD_DIR,target=/usr/src,type=bind kennethkaijieng/latex-tectonic:latest /bin/sh -c "tectonic CookingRecipes.tex"
 deploy:
   provider: releases
